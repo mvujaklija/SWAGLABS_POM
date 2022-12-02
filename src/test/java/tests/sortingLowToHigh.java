@@ -13,9 +13,7 @@ import java.util.List;
 
 public class sortingLowToHigh extends BaseTest{
 
-    ChromeDriver driver = openChromeDriver();
-
-     /**
+    /**
      * TEST BUY ONE ITEM
      * Steps
      * 1. Navigate to a login page
@@ -45,35 +43,38 @@ public class sortingLowToHigh extends BaseTest{
             LoginPage loginPage = new LoginPage(driver);
             loginPage.logInUser(Strings.VALID_USERNAME, Strings.VALID_PASSWORD);
 
-            //Sorting of products by price low to high
+            //Sorting of products by price low to high immediately
 
-            WebElement dropdownList = driver.findElement( By.xpath( "//select" )) ;
+            WebElement dropdownList = driver.findElement(By.xpath("//select"));
             Select dropdown = new Select(dropdownList);
             dropdown.selectByVisibleText("Price (low to high)");
 
-            List< WebElement > listOfItemsAfterSort = driver.findElements( By.xpath( "//*[@class = 'inventory_item']" ) ); ;
+            List<WebElement> listOfItemsAfterSort = driver.findElements(By.xpath("//*[@class = 'inventory_item']"));
 
-            ArrayList< Double > priceArray = new ArrayList< >();
-            for ( WebElement item: listOfItemsAfterSort) {
 
-                String price = item.findElement(By.xpath("//div[@class = 'inventory_item_price']")).getText().replace("$", "");
-                Double priceLikeDecimal = Double.valueOf( price );
+            ArrayList<Double> priceArray = new ArrayList<Double>();
+            for (WebElement item : listOfItemsAfterSort) {
+
+                String price = item.findElement(By.xpath(".//div[@class = 'inventory_item_price']")).getText().replace("$", "");
+                Double priceLikeDecimal = Double.valueOf(price);
+
                 priceArray.add(priceLikeDecimal);
+            }
 
-                //Print of Price array
+            //Print of Price array
 
-                System.out.println("List of items  " + priceArray.toString());
+            System.out.println("List of items  " + priceArray.toString());
 
-                //Check of sorting is successful
+            //Check out is it sorting successful
 
-//                for ( int i = 0 ; i < listOfItemsAfterSort.size()-1 ; i++ ) {
-//
-//                   assert  listOfItemsAfterSort.get( i ) <= listOfItemsAfterSort.get ( i +1 ) : "First: " + listOfItemsAfterSort.get( i ) + "it is not smaleer or equal to " + listOfItemsAfterSort.get( i+1 );
+            for (int i = 0; i < priceArray.size() - 1; i++) {
 
-                }
+                assert priceArray.get(i) <= priceArray.get(i + 1) : "First: " + priceArray.get(i) + "it is not smaleer or equal to " + priceArray.get(i + 1);
+
 
             }
-            finally {
+        }
+        finally {
 
             driver.quit();
 

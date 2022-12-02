@@ -47,6 +47,7 @@ public class burgerMenuTest extends BaseTest{
              BurgerMenuPage burgerMenupage = new BurgerMenuPage( driver );
              burgerMenupage.burgerMenuButton( );
 
+
              //Click on the link ALL ITEMS
 
              text( "Click on the link ALL ITEMS");
@@ -59,10 +60,9 @@ public class burgerMenuTest extends BaseTest{
 
              //Click on the about
 
-             text( "Click on the link abouth");
+             text( "Click on the link about");
              BurgerMenuPage burgerMenuPage2 = new BurgerMenuPage( driver );
-             burgerMenuPage2.burgerMenuButton();
-             burgerMenuPage2.about( );
+             burgerMenuPage2.about();
              ArrayList<String> tab = new ArrayList( driver.getWindowHandles ( ));
              driver.switchTo( ).window( tab.get(1) );
              String currentURL1 = driver.getCurrentUrl ( );
@@ -75,7 +75,6 @@ public class burgerMenuTest extends BaseTest{
 
              text( "Click on the link RESET APP STATE");
              BurgerMenuPage burgerMenuPage3 = new BurgerMenuPage( driver );
-             burgerMenuPage3.burgerMenuButton();
              burgerMenuPage3.reset();
              String currentURL2 = driver.getCurrentUrl ( );
              assert currentURL2.equals ( "https://www.saucedemo.com/inventory.html" ) : " Expected user is on the inventory page https://www.saucedemo.com/inventory.html.  App is not compliantly rested some things stay in previous condition"  + "Actual" + currentURL2;
@@ -84,7 +83,6 @@ public class burgerMenuTest extends BaseTest{
 
              text( "Click on link LOGOUT");
              BurgerMenuPage burgerMenuPage4 = new BurgerMenuPage( driver );
-             burgerMenuPage4.burgerMenuButton();
              burgerMenuPage4.logout();
              String currentURL3 = driver.getCurrentUrl();
              assert currentURL3.equals( "https://www.saucedemo.com/" ) : "user is log out successfully" + "Actual " +  currentURL2;

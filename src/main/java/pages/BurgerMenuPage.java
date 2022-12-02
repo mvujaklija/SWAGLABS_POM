@@ -10,18 +10,23 @@ public class BurgerMenuPage {
     //Looking for WebElements
 
     @FindBy( xpath = "//button [ @id = 'react-burger-menu-btn' ]" )
+    static
     WebElement burgerMenuButton;
 
-    @FindBy ( xpath = "//nav/a [ @id = 'inventory_sidebar_link' ]" )
+    @FindBy ( xpath = "//a [ @id = 'inventory_sidebar_link' ]" )
+    static
     WebElement allItems;
 
-    @FindBy ( xpath = "//nav/a [ @id = 'about_sidebar_link' ]" )
+    @FindBy ( xpath = "//a [ @id = 'about_sidebar_link' ]" )
+    static
     WebElement about;
 
-    @FindBy ( xpath = "//nav/a [ @id = 'logout_sidebar_link' ]" )
+    @FindBy ( xpath = "//a [ @id = 'logout_sidebar_link' ]" )
+    static
     WebElement logout;
 
-    @FindBy ( xpath = "//nav/a[ @id = 'logout_sidebar_link' ]" )
+    @FindBy ( xpath = "//a[ @id = 'logout_sidebar_link' ]" )
+    static
     WebElement resetAppState;
 
 
@@ -34,7 +39,7 @@ public class BurgerMenuPage {
 
     //Constructor
 
-    public BurgerMenuPage(ChromeDriver driver ) {
+    public BurgerMenuPage(ChromeDriver driver) {
 
         this.driver = driver;
         PageFactory.initElements ( driver , this );
@@ -46,8 +51,8 @@ public class BurgerMenuPage {
      * THIS Method clicks on burger menu icon
      */
 
-    public void burgerMenuButton ( ) {
-        assert burgerMenuButton.isDisplayed ( ) : "Expected burger button is displayed. Expected to be there.";
+    public void burgerMenuButton() {
+        //assert burgerMenuButton.isDisplayed ( ) : "Expected burger button is displayed. Expected to be there.";
         text ( "Click on product sorting filter list" );
         burgerMenuButton.click ( );
     }
@@ -57,7 +62,8 @@ public class BurgerMenuPage {
      * THIS Method clicks on ALL ITEMS link
      */
 
-    public void allItems ( ) {
+    public static void allItems ( ) {
+        assert allItems.isDisplayed ( ) : "Expected ALL ITEMS link is displayed. Expected to be there.";
         text( "Click on link ALL ITEMS");
         allItems.click();
     }
@@ -66,28 +72,32 @@ public class BurgerMenuPage {
      * THIS Method clicks on ABOUT link
      */
 
-    public void about ( ) {
+    public static void about ( ) {
+        //assert about.isDisplayed ( ) : "Expected about link is displayed. Expected to be there.";
         text( "Click on link ABOUT");
         about.click();
 
     }
 
     /**
-     * THIS Method clicks on LOGOUT link
-     */
-
-    public void logout ( ) {
-        text( "Click on link LOGOUT");
-        logout.click();
-    }
-
-    /**
      * THIS Method clicks on RESET APP STAGE
      */
 
-    public void reset ( ) {
+    public static void reset ( ) {
+        //assert resetAppState.isDisplayed ( ) : "Expected about link is displayed. Expected to be there.";
         text( "Click on link ALL ITEMS");
         resetAppState.click();
+    }
+
+    /**
+     * THIS Method clicks on LOGOUT link
+     */
+
+    public static void logout ( ) {
+        //assert logout.isDisplayed ( ) : "Expected burger button is displayed. Expected to be there.";
+        text( "Click on link LOGOUT");
+        logout.click();
+
     }
 
 }
