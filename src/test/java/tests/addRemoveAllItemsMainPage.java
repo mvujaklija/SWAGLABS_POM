@@ -22,7 +22,7 @@ public class addRemoveAllItemsMainPage extends BaseTest{
      * 7. Remove all items from the chart by clicking REMOVE button
      * 7. Review you purchase and click on the button FINISH
      * 8. On the chart badge with assert verify number of items in chart
-     *
+     * <p>
      * Expected results
      * 8 User is successfully add items to a chart and remove them without leaving inventory page
      */
@@ -77,4 +77,5 @@ public class addRemoveAllItemsMainPage extends BaseTest{
         }
 
     }
+
 }

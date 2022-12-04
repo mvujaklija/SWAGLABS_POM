@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
-
     //Looking for WebElements
 
     @FindBy ( xpath = "//a [ @class = 'shopping_cart_link' ]" )
@@ -56,10 +55,6 @@ public class MainPage {
     @FindBy ( xpath = "//button [ @id = remove-test.allthethings()-t-shirt-(red)' ]" )
     WebElement removeFromChartButtonProductShirtRed;
 
-
-
-
-
     //Invoking Chrome driver
 
     public ChromeDriver driver = null;
@@ -76,174 +71,177 @@ public class MainPage {
         PageFactory.initElements ( driver , this );
     }
 
-    //Methods
+        //Methods
 
-    /**
-     * THIS Method clicks on Chart icon
-     */
+        /**
+         * THIS Method clicks on Chart icon
+         */
 
-    public void clickShoppingChartIcon ( ) {
-        assert shoppingChartIcon.isDisplayed ( ) : "Shopping chart button is not displayed. Expected to be there.";
-        text ( "CLICK on th shopping chart icon" );
-        shoppingChartIcon.click ( );
+        public void clickShoppingChartIcon ( ) {
 
-    }
+            assert shoppingChartIcon.isDisplayed ( ) : "Shopping chart button is not displayed. Expected to be there.";
 
-    /**
-     * THIS Method get number of items in sopping chart
-     */
+            shoppingChartIcon.click ( );
 
-    public Object getNumberFromShoppingChartBadge ( ) {
-        assert shoppingChartIcon.isDisplayed ( ) : "Shopping chart badge is not display number of items. Expected to number of items be there.";
-        text ( "Get number from shopping badge icon" );
-        String number = shoppingChartBadge.getText ( );
-        return number;
-    }
+        }
 
-    /**
-     * THIS Method add Bike Light product
-     */
+        /**
+         * THIS Method get number of items in sopping chart
+         */
 
-    public void addToChartButtonProductBikeLight ( ) {
-        assert addToChartButtonProductBikeLight.isDisplayed ( ) : "Button for adding to chart product bike light is not displayed. Expected to be there.";
-        text ( "Click on button ADD TO CHART for Bike Light product" );
-        addToChartButtonProductBikeLight.click ( );
+        public Object getNumberFromShoppingChartBadge ( ) {
 
-    }
+            assert shoppingChartIcon.isDisplayed ( ) : "Shopping chart badge is not display number of items. Expected to number of items be there.";
 
-    /**
-     * THIS Method  add Back Pack product
-     */
+            String number = shoppingChartBadge.getText ( );
 
-    public void addToChartButtonProductBackPack ( ) {
-        assert addToChartButtonProductBackPack.isDisplayed ( ) : "Button for adding to chart product back pack is not displayed. Expected to be there.";
-        text ( "Click on button ADD TO CHART for Back pack product" );
-        addToChartButtonProductBackPack.click ( );
+            return number;
 
-    }
+        }
 
-    /**
-     * THIS Method  add Bolt Shirt product
-     */
+        /**
+         * THIS Method adds Bike Light product
+         */
 
-    public void addToChartButtonProductBoltShirt ( ) {
-        assert addToChartButtonProductBoltShirt.isDisplayed ( ) : "Button for adding to chart product bolt shirt is not displayed. Expected to be there.";
-        text ( "Click on button ADD TO CHART for Bolt shirt product" );
-        addToChartButtonProductBackPack.click ( );
+        public void addToChartButtonProductBikeLight ( ) {
 
-    }
+            assert addToChartButtonProductBikeLight.isDisplayed ( ) : "Button for adding to chart product bike light is not displayed. Expected to be there.";
 
-    /**
-     * THIS Method  add Labs Onesie product
-     */
+            addToChartButtonProductBikeLight.click ( );
 
-    public void addToChartButtonProductLabsOnesie ( ) {
-        assert addToChartButtonProductLabsOnesie.isDisplayed ( ) : "Button for adding to chart product labs onesie is not displayed. Expected to be there.";
-        text ( "Click on button ADD TO CHART for Labs Onies product" );
-        addToChartButtonProductLabsOnesie.click ( );
+        }
 
-    }
+        /**
+         * THIS Method  adds Back-Pack product
+         */
 
-    /**
-     * THIS Method  add Fleece Jacket product
-     */
+        public void addToChartButtonProductBackPack ( ) {
 
-    public void addToChartButtonProductFleeceJacket ( ) {
-        assert addToChartButtonProductFleeceJacket.isDisplayed ( ): "Button for adding to chart product fleece jacket is not displayed. Expected to be there.";
-        text ( "Click on button ADD TO CHART for Fleece jacket product" );
-        addToChartButtonProductFleeceJacket.click ( );
+            assert addToChartButtonProductBackPack.isDisplayed ( ) : "Button for adding to chart product back pack is not displayed. Expected to be there.";
 
-    }
+            addToChartButtonProductBackPack.click ( );
 
-    /**
-     * THIS Method  add Red T-Shirt product
-     */
+        }
 
-    public void addToChartButtonProductShirtRed ( ) {
-        assert addToChartButtonProductShirtRed.isDisplayed ( ) : "Button for adding to chart product red t-shirt is not displayed. Expected to be there.";
-        text ( "Click on button ADD TO CHART for Fleece jacket product" );
-        addToChartButtonProductShirtRed.click ( );
+        /**
+         * THIS Method  adds Bolt Shirt product
+         */
 
-    }
+        public void addToChartButtonProductBoltShirt ( ) {
 
-    /**
-     * THIS Method  check inventory price
-     */
+            assert addToChartButtonProductBoltShirt.isDisplayed ( ) : "Button for adding to chart product bolt shirt is not displayed. Expected to be there.";
 
-    public void inventoryItemPrice ( ) {
-        assert inventoryItemPrice.isDisplayed ( ) : "Inventory price of product is not displayed. Expected to be there";
+            addToChartButtonProductBackPack.click ( );
 
+        }
 
-    }
+        /**
+         * THIS Method  adds Labs Onesie product
+         */
 
-    /**
-     * THIS Method  remove Bike Light product
-     */
+        public void addToChartButtonProductLabsOnesie ( ) {
 
-    public void removeFromChartButtonProductBikeLight ( ) {
-        assert removeFromChartButtonProductBikeLight.isDisplayed ( ) : "Button for removing from chart product bike light is not displayed. Expected to be there.";
-        text ( "Click on button REMOVE for Bike Light product" );
-        removeFromChartButtonProductBikeLight.click ( );
+            assert addToChartButtonProductLabsOnesie.isDisplayed ( ) : "Button for adding to chart product labs onesie is not displayed. Expected to be there.";
 
-    }
+            addToChartButtonProductLabsOnesie.click ( );
 
-    /**
-     * THIS Method  remove Back Pack product
-     */
+        }
 
-    public void removeFromChartButtonProductBackPack ( ) {
-        assert removeFromChartButtonProductBackPack.isDisplayed ( ) : "Button for removing from chart product back pack is not displayed. Expected to be there.";
-        text ( "Click on button REMOVE for Back pack product" );
-        removeFromChartButtonProductBackPack.click ( );
+        /**
+         * THIS Method  adds Fleece Jacket product
+         */
 
-    }
+        public void addToChartButtonProductFleeceJacket ( ) {
 
-    /**
-     * THIS Method  remove Bolt Shirt product
-     */
+            assert addToChartButtonProductFleeceJacket.isDisplayed ( ): "Button for adding to chart product fleece jacket is not displayed. Expected to be there.";
 
-    public void removeFromChartButtonProductBoltShirt ( ) {
-        assert removeFromChartButtonProductBoltShirt.isDisplayed ( ) : "Button for removing from chart product bolt shirt is not displayed. Expected to be there.";
-        text ( "Click on button REMOVE for Bolt shirt product" );
-        removeFromChartButtonProductBoltShirt.click ( );
+            addToChartButtonProductFleeceJacket.click ( );
 
-    }
+        }
 
-    /**
-     * THIS Method  remove Labs Onesie product
-     */
+        /**
+         * THIS Method  add Red T-Shirt product
+         */
 
-    public void removeFromChartButtonProductLabsOnesie ( ) {
-        assert removeFromChartButtonProductLabsOnesie.isDisplayed ( ) : "Button for removing from chart product labs onesie is not displayed. Expected to be there.";
-        text ( "Click on button REMOVE for Labs Onies product" );
-        removeFromChartButtonProductLabsOnesie.click ( );
+        public void addToChartButtonProductShirtRed ( ) {
 
-    }
+            assert addToChartButtonProductShirtRed.isDisplayed ( ) : "Button for adding to chart product red t-shirt is not displayed. Expected to be there.";
 
-    /**
-     * THIS Method  remove Fleece Jacket product
-     */
+            addToChartButtonProductShirtRed.click ( );
 
-    public void removeFromChartButtonProductFleeceJacket ( ) {
-        assert removeFromChartButtonProductFleeceJacket.isDisplayed ( ) : "Button for removing from chart product fleece jacket is not displayed. Expected to be there.";
-        text ( "Click on button REMOVE for Fleece jacket product" );
-        removeFromChartButtonProductFleeceJacket.click ( );
+        }
 
-    }
+        /**
+         * THIS Method  remove Bike Light product
+         */
 
-    /**
-     * THIS Method  remove Red T-Shirt product
-     */
+        public void removeFromChartButtonProductBikeLight ( ) {
 
-    public void removeFromChartButtonProductShirtRed ( ) {
-        assert removeFromChartButtonProductShirtRed.isDisplayed ( ) : "Button for removing from chart product red t-shirt is not displayed. Expected to be there.";
-        text ( "Click on button REMOVE for Fleece jacket product" );
-        removeFromChartButtonProductShirtRed.click ( );
+            assert removeFromChartButtonProductBikeLight.isDisplayed ( ) : "Button for removing from chart product bike light is not displayed. Expected to be there.";
 
-    }
+            removeFromChartButtonProductBikeLight.click ( );
 
+        }
 
+        /**
+         * THIS Method  remove Back-Pack product
+         */
 
+        public void removeFromChartButtonProductBackPack ( ) {
+
+            assert removeFromChartButtonProductBackPack.isDisplayed ( ) : "Button for removing from chart product back pack is not displayed. Expected to be there.";
+
+            removeFromChartButtonProductBackPack.click ( );
+
+        }
+
+        /**
+         * THIS Method  remove Bolt Shirt product
+         */
+
+        public void removeFromChartButtonProductBoltShirt ( ) {
+
+            assert removeFromChartButtonProductBoltShirt.isDisplayed ( ) : "Button for removing from chart product bolt shirt is not displayed. Expected to be there.";
+
+            removeFromChartButtonProductBoltShirt.click ( );
+
+        }
+
+        /**
+         * THIS Method  remove Labs Onesie product
+         */
+
+        public void removeFromChartButtonProductLabsOnesie ( ) {
+
+            assert removeFromChartButtonProductLabsOnesie.isDisplayed ( ) : "Button for removing from chart product labs onesie is not displayed. Expected to be there.";
+
+            removeFromChartButtonProductLabsOnesie.click ( );
+
+        }
+
+        /**
+         * THIS Method  remove Fleece Jacket product
+         */
+
+        public void removeFromChartButtonProductFleeceJacket ( ) {
+
+            assert removeFromChartButtonProductFleeceJacket.isDisplayed ( ) : "Button for removing from chart product fleece jacket is not displayed. Expected to be there.";
+
+            removeFromChartButtonProductFleeceJacket.click ( );
+
+        }
+
+        /**
+         * THIS Method  remove Red T-Shirt product
+         */
+
+        public void removeFromChartButtonProductShirtRed ( ) {
+
+            assert removeFromChartButtonProductShirtRed.isDisplayed ( ) : "Button for removing from chart product red t-shirt is not displayed. Expected to be there.";
+
+            removeFromChartButtonProductShirtRed.click ( );
+
+        }
 
 }
 

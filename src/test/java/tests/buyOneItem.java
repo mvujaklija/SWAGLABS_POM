@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.*;
 
 
-
 public class buyOneItem extends BaseTest {
 
     /**
@@ -18,7 +17,7 @@ public class buyOneItem extends BaseTest {
      * 5. Click on the shopping cart icon and click button CHECKOUT
      * 6. Fill data that is required from you on the next page and click on the CONTINUE
      * 7. Review you purchase and click on the button FINISH
-     *
+     * <p>
      * Expected results
      * 8 User is successfully buy selected item and redirected to page that inform him about that
      */
@@ -57,8 +56,11 @@ public class buyOneItem extends BaseTest {
 
             text ( "Enter user information's as requested" );
             CheckOutStepOne checkOutStepOne = new CheckOutStepOne ( driver );
+            text( "Enter first name");
             checkOutStepOne.enterFirstName ( Strings.FIRST_NAME );
+            text( "Enter last name");
             checkOutStepOne.enterLastName ( Strings.LAST_NAME );
+            text( "Enter ZIP code");
             checkOutStepOne.enterZipCode ( Strings.ZIP_CODE );
             text ("Click CONTINUE");
             checkOutStepOne.clickContinueButton ();
@@ -84,4 +86,5 @@ public class buyOneItem extends BaseTest {
         }
 
     }
+
 }

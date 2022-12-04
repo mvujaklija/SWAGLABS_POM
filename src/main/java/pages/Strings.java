@@ -37,5 +37,4 @@ public class Strings {
     public static final String LAST_NAME = "Vujaklija";
     public static final String ZIP_CODE = "11273";
 
-
 }

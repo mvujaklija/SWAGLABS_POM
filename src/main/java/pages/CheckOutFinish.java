@@ -14,20 +14,25 @@ public class CheckOutFinish extends MainPage {
     //constructor
 
     public CheckOutFinish(ChromeDriver driver ) {
+
         super ( driver );
+
         assert driver.getCurrentUrl().equals( Strings.CHECKOUT_COMPLETE_URL ) : "User is not on Checkout page";
+
     }
 
-    /**
-     * THIS Method  verify that purchase was successful
-     */
+        /**
+         * THIS Method  verify that purchase was successful
+         */
 
-    public String getHeaderText() {
-        text("Purchase was not successful. Try again");
-        assert headerText.isDisplayed() : "Header is NOT shown on page";
-        String actualText = headerText.getText();
-        return  actualText;
-    }
+        public String getHeaderText() {
 
+            assert headerText.isDisplayed() : "Header is NOT shown on page";
+
+            String actualText = headerText.getText();
+
+            return  actualText;
+
+        }
 
 }

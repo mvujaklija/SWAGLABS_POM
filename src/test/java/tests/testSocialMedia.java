@@ -2,7 +2,10 @@ package tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.LoginPage;
+import pages.SocialMediaPage;
+import pages.Strings;
+
 import java.util.ArrayList;
 
 public class testSocialMedia extends BaseTest{
@@ -17,7 +20,7 @@ public class testSocialMedia extends BaseTest{
      * 5. Click on the TWITTER icon
      * 6. Click on the FACEBOOK icon
      * 7. Click on the LinkedIn icon
-     *
+     * <p>
      * Expected results
      * 8 User is successfully redirected to appropriate pge according to the icon that is clicked
      */
@@ -31,6 +34,8 @@ public class testSocialMedia extends BaseTest{
         //Invoking Chrome driver
 
         ChromeDriver driver = openChromeDriver( );
+
+
 
         try{
 
@@ -46,7 +51,7 @@ public class testSocialMedia extends BaseTest{
         text ( "Clicing and redirecting to TWITTER page of the SWAGLABS" );
         SocialMediaPage socialMediaPage = new SocialMediaPage ( driver );
         socialMediaPage.testTwitterButton ( );
-        ArrayList <String> tab1 = new ArrayList ( driver.getWindowHandles ( ));
+        ArrayList <String> tab1 = new ArrayList<>( driver.getWindowHandles ( ));
         driver.switchTo().window(tab1.get(1));
         String currentURL = driver.getCurrentUrl ( );
         assert currentURL.equals ( "https://twitter.com/saucelabs" ) : "User is on the wrong page. " +  "  Actual: " + currentURL;
@@ -58,10 +63,10 @@ public class testSocialMedia extends BaseTest{
         text ( "Clicing and redirecting to Facebook page of the SWAGLABS" );
         SocialMediaPage socialMediaPage1 = new SocialMediaPage ( driver );
         socialMediaPage1.testFacebookButton ( );
-        ArrayList <String> tab2 = new ArrayList ( driver.getWindowHandles ( ));
+        ArrayList <String> tab2 = new ArrayList<>( driver.getWindowHandles ( ));
         driver.switchTo().window(tab2.get(1));
         String currentURL1 = driver.getCurrentUrl ( );
-        assert currentURL1.equals ( "https://www.facebook.com/saucelabs" ) : "User is on the wrong page. " +  "  Actual: " + currentURL;
+        assert currentURL1.equals ( "https://www.facebook.com/saucelabs" ) : "User is on the wrong page. " +  "  Actual: " + currentURL1;
         driver.close();
         driver.switchTo().window(tab2.get(0));
 
@@ -70,11 +75,11 @@ public class testSocialMedia extends BaseTest{
         text ( "Clicing and redirecting to LinkedIn page of the SWAGLABS" );
         SocialMediaPage socialMediaPage2 = new SocialMediaPage ( driver );
         socialMediaPage2.testLinkedinButton ( );
-        ArrayList <String> tab3 = new ArrayList ( driver.getWindowHandles ( ));
+        ArrayList <String> tab3 = new ArrayList<>( driver.getWindowHandles ( ));
         driver.switchTo().window(tab3.get(1));
-//        String currentURL2 = driver.getCurrentUrl ( );
-//        assert currentURL2.equals ( "https://www.linkedin.com/company/sauce-labs/" ) : "User is on the wrong page. " +  "  Actual: " + currentURL;
-//        driver.close();
+        String currentURL2 = driver.getCurrentUrl ( );
+        assert currentURL2.equals ( "https://www.linkedin.com/company/sauce-labs/" ) : "User is on the wrong page. " +  "  Actual: " + currentURL2;
+        driver.close();
         driver.switchTo().window(tab3.get(0));
 
     }
@@ -83,5 +88,7 @@ public class testSocialMedia extends BaseTest{
             driver.quit();
 
         }
-        }
+
+    }
+
 }

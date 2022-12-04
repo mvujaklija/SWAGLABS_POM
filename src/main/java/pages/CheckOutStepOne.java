@@ -26,61 +26,64 @@ public class CheckOutStepOne extends MainPage{
     //Constructor
 
     public CheckOutStepOne ( ChromeDriver driver ) {
+
         super ( driver );
+
         assert driver.getCurrentUrl().equals(Strings.CHECKOUT_STEP_ONE_URL) : "Wrong page. Expected "
                                                                               + Strings.CHECKOUT_STEP_ONE_URL + " . Actual " + driver.getCurrentUrl();
 
     }
 
-    //Methods
+        //Methods
 
-    /**
-     * THIS Method  enters first name in form
-     */
+        /**
+         * THIS Method  enters first name in form
+         */
 
-    public void enterFirstName( String firstNamec) {
-        text("Entering First Name" );
-        firstNameField.sendKeys(Strings.FIRST_NAME);
-    }
+        public void enterFirstName( String firstName) {
 
-    /**
-     * THIS Method  enters last name to form
-     */
+            firstNameField.sendKeys(Strings.FIRST_NAME);
 
-    public void enterLastName( String lastName ) {
-        text ("Entering Last Name" );
-        lastNameField.sendKeys(Strings.LAST_NAME);
-    }
+        }
 
-    /**
-     * THIS Method  enters zip code to form
-     */
+        /**
+         * THIS Method  enters last name to form
+         */
 
-    public void enterZipCode( String zipCode ) {
-        text ("Entering Zip Code" );
-        zipCodeField.sendKeys(Strings.ZIP_CODE);
-    }
+        public void enterLastName( String lastName ) {
 
-    /**
-     * THIS Method  click CONTINUE button
-     */
+            lastNameField.sendKeys(Strings.LAST_NAME);
 
-    public void clickContinueButton( ) {
-        text ("click CONTINUE Button" );
-        continueButton.click();
+        }
 
-    }
+        /**
+         * THIS Method  enters zip code to form
+         */
 
-    /**
-     * THIS Method  click CANCEL button
-     */
+        public void enterZipCode( String zipCode ) {
 
-    public void clickCancelButton( ) {
-        text ("click CONTINUE Button" );
-        cancelButton.click();
+            zipCodeField.sendKeys(Strings.ZIP_CODE);
 
-    }
+        }
 
+        /**
+         * THIS Method  click CONTINUE button
+         */
 
+        public void clickContinueButton( ) {
+
+            continueButton.click();
+
+        }
+
+        /**
+         * THIS Method  click CANCEL button
+         */
+
+        public void clickCancelButton( ) {
+
+            cancelButton.click();
+
+        }
 
 }

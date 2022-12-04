@@ -32,34 +32,41 @@ public class SocialMediaPage {
         PageFactory.initElements ( driver , this );
     }
 
-    //Methods
+        //Methods
 
-    public void testTwitterButton ( ) {
-        assert twitterButton.isDisplayed ( ) : "Twitter button is not present. Expected to be there";
-        text ( "Click on the Twitter button to go to SWAGLABS twitter page" );
-        twitterButton.click ( );
-    }
+        /**
+         * THIS Method  redirect to Twitter page
+         */
 
-    /**
-     * THIS Method  redirect to Facebook page
-     */
+        public void testTwitterButton ( ) {
 
-    public void testFacebookButton ( ) {
-        assert facebookButton.isDisplayed ( ) : "Facebook button is not present. Expected to be there";
-        text ( "Click on the Facebook button to go to SWAGLABS facebook page" );
-        facebookButton.click ( );
-    }
+            assert twitterButton.isDisplayed ( ) : "Twitter button is not present. Expected to be there";
 
-    /**
-     * THIS Method  redirect to LikedIn page
-     */
+            twitterButton.click ( );
 
-    public void testLinkedinButton ( ) {
-        assert linkedinButton.isDisplayed ( ) : "LinkedIn button is not present. Expected to be there";
-        text ( "Click on the LinkedIn button to go to SWAGLABS LinkedIn page" );
-        linkedinButton.click ();
+        }
 
+        /**
+         * THIS Method  redirect to Facebook page
+         */
 
-    }
+        public void testFacebookButton ( ) {
+
+            assert facebookButton.isDisplayed ( ) : "Facebook button is not present. Expected to be there";
+
+            facebookButton.click ( );
+
+        }
+
+        /**
+         * THIS Method  redirect to LikedIn page
+         */
+
+        public void testLinkedinButton ( ) {
+            assert linkedinButton.isDisplayed ( ) : "LinkedIn button is not present. Expected to be there";
+
+            linkedinButton.click ();
+
+        }
 
 }

@@ -10,26 +10,28 @@ public class BurgerMenuPage {
     //Looking for WebElements
 
     @FindBy( xpath = "//button [ @id = 'react-burger-menu-btn' ]" )
-    static
+
     WebElement burgerMenuButton;
 
-    @FindBy ( xpath = "//a [ @id = 'inventory_sidebar_link' ]" )
-    static
-    WebElement allItems;
+    @FindBy( xpath = "//div [ @class = 'bm-cross-button' ]" )
 
-    @FindBy ( xpath = "//a [ @id = 'about_sidebar_link' ]" )
-    static
-    WebElement about;
+    WebElement burgerMenuClose;
 
-    @FindBy ( xpath = "//a [ @id = 'logout_sidebar_link' ]" )
-    static
-    WebElement logout;
+    @FindBy ( xpath = "//nav/a [ @id = 'inventory_sidebar_link' ]" )
 
-    @FindBy ( xpath = "//a[ @id = 'logout_sidebar_link' ]" )
-    static
+    WebElement clickLinkAllItems;
+
+    @FindBy ( xpath = "//nav/a [ @id = 'about_sidebar_link' ]" )
+
+    WebElement clickLinkAbout;
+
+    @FindBy ( xpath = "//nav/a[ @id = 'reset_sidebar_link' ]" )
+
     WebElement resetAppState;
 
+    @FindBy ( xpath = "//nav/a [ @id = 'logout_sidebar_link' ]" )
 
+    WebElement logout;
 
     //Invoking Chrome driver
 
@@ -45,59 +47,69 @@ public class BurgerMenuPage {
         PageFactory.initElements ( driver , this );
     }
 
-    //Methods
+        //Methods
+
+        /**
+         * THIS Method opens burger menu icon
+         */
+
+        public void burgerMenuButton() {
+
+            assert burgerMenuButton.isDisplayed ( ) : "Expected burger button is displayed. Expected to be there.";
+
+            burgerMenuButton.click ( );
+
+        }
 
     /**
-     * THIS Method clicks on burger menu icon
+     * THIS Method close burger menu icon
      */
 
-    public void burgerMenuButton() {
-        //assert burgerMenuButton.isDisplayed ( ) : "Expected burger button is displayed. Expected to be there.";
-        text ( "Click on product sorting filter list" );
-        burgerMenuButton.click ( );
-    }
+    public void burgerMenuClose() {
 
+        assert burgerMenuClose.isDisplayed ( ) : "Expected burger button is displayed. Expected to be there.";
 
-    /**
-     * THIS Method clicks on ALL ITEMS link
-     */
-
-    public static void allItems ( ) {
-        assert allItems.isDisplayed ( ) : "Expected ALL ITEMS link is displayed. Expected to be there.";
-        text( "Click on link ALL ITEMS");
-        allItems.click();
-    }
-
-    /**
-     * THIS Method clicks on ABOUT link
-     */
-
-    public static void about ( ) {
-        //assert about.isDisplayed ( ) : "Expected about link is displayed. Expected to be there.";
-        text( "Click on link ABOUT");
-        about.click();
+        burgerMenuClose.click ( );
 
     }
 
-    /**
-     * THIS Method clicks on RESET APP STAGE
-     */
+        /**
+         * THIS Method clicks on ALL ITEMS link
+         */
 
-    public static void reset ( ) {
-        //assert resetAppState.isDisplayed ( ) : "Expected about link is displayed. Expected to be there.";
-        text( "Click on link ALL ITEMS");
-        resetAppState.click();
-    }
+        public void clickLinkAllItems ( ) {
 
-    /**
-     * THIS Method clicks on LOGOUT link
-     */
+            clickLinkAllItems.click();
+        }
 
-    public static void logout ( ) {
-        //assert logout.isDisplayed ( ) : "Expected burger button is displayed. Expected to be there.";
-        text( "Click on link LOGOUT");
-        logout.click();
+        /**
+         * THIS Method clicks on ABOUT link
+         */
 
-    }
+        public void clickLinkAbout( ) {
+
+           clickLinkAbout.click();
+
+        }
+
+        /**
+         * THIS Method clicks on RESET APP STAGE
+         */
+
+        public void reset ( ) {
+
+            resetAppState.click();
+
+        }
+
+        /**
+         * THIS Method clicks on LOGOUT link
+         */
+
+        public void logout ( ) {
+
+            logout.click();
+
+        }
 
 }

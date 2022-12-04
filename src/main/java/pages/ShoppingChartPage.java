@@ -37,99 +37,105 @@ public class ShoppingChartPage extends MainPage {
 
     public ShoppingChartPage ( ChromeDriver driver ) {
         super ( driver );
-        text ( "We are on the shopping chart page" );
+
         assert driver.getCurrentUrl ( ).equals ( Strings.SHOPPING_CART_PAGE_URL ) : "User is not on Shopping vhart page" + driver.getCurrentUrl ( );
     }
 
-    //Methods
+        //Methods
 
-    /**
-     * THIS method clicks on the CHECKOUT button
-     */
+        /**
+         * THIS method clicks on the CHECKOUT button
+         */
 
-    public void checkOutButton ( ) {
+        public void checkOutButton ( ) {
 
-        assert checkOutButton.isDisplayed ( );
-        text( "By clicking button CHECKOUT we are redirected to check out page to pay for the product/s");
-        checkOutButton.click ();
-    }
+            assert checkOutButton.isDisplayed ( );
 
-    /**
-     * THIS method clicks on the CONTINUE SHOPPING button
-     */
+            checkOutButton.click ();
+        }
 
-    public void continueShoppingButton ( ) {
+        /**
+         * THIS method clicks on the CONTINUE SHOPPING button
+         */
 
-        assert continueShoppingButton.isDisplayed ( );
-        text ( "By clicking button CONTINUE SHOPPING we are redirected to inventory page and we can continue shopping" );
-        continueShoppingButton.click ();
+        public void continueShoppingButton ( ) {
 
-    }
+            assert continueShoppingButton.isDisplayed ( );
 
-    /**
-     * THIS Method  remove Bike Light product
-     */
+            continueShoppingButton.click ();
 
-    public void buttonRemoveBikeLight( ) {
+        }
 
-        assert buttonRemoveBikeLight.isDisplayed ( );
-        text( "By click on this button we remove product  BIKE LIGHT from chart" );
-        buttonRemoveBikeLight.click ();
-    }
+        /**
+         * THIS Method  remove Bike Light product
+         */
 
-    /**
-     * THIS Method  remove Back Pack product
-     */
+        public void buttonRemoveBikeLight( ) {
 
-    public void buttonRemoveBackPack( ) {
+            assert buttonRemoveBikeLight.isDisplayed ( );
 
-        assert buttonRemoveBackPack.isDisplayed ( );
-        text( "By click on this button we remove product  BACK PACK from chart" );
-        buttonRemoveBackPack.click ();
-    }
+            buttonRemoveBikeLight.click ();
 
-    /**
-     * THIS Method  remove Bolt Shirt product
-     */
+        }
 
-    public void buttonRemoveBoltShirt( ) {
+        /**
+         * THIS Method  remove Back Pack product
+         */
 
-        assert buttonRemoveBoltShirt.isDisplayed ( );
-        text( "By click on this button we remove product  BOLT T-SHIRT from chart" );
-        buttonRemoveBoltShirt.click ();
-    }
+        public void buttonRemoveBackPack( ) {
 
-    /**
-     * THIS Method  remove Fleece Jacket product
-     */
+            assert buttonRemoveBackPack.isDisplayed ( );
 
-    public void buttonRemoveFleeceJacket( ) {
+            buttonRemoveBackPack.click ();
 
-        assert buttonRemoveFleeceJacket.isDisplayed ( );
-        text( "By click on this button we remove product  FLEECE JACKET from chart" );
-        buttonRemoveBikeLight.click ();
-    }
+        }
 
-    /**
-     * THIS Method  remove Labs Oneesie product
-     */
+        /**
+         * THIS Method  remove Bolt Shirt product
+         */
 
-    public void  buttonRemoveLabsOnesie( ) {
+        public void buttonRemoveBoltShirt( ) {
 
-        assert buttonRemoveLabsOnesie.isDisplayed ( );
-        text( "By click on this button we remove product  BIKE LIGHT from chart" );
-        buttonRemoveLabsOnesie.click ();
-    }
+            assert buttonRemoveBoltShirt.isDisplayed ( );
 
-    /**
-     * THIS Method  remove Red T-Shirt product
-     */
+            buttonRemoveBoltShirt.click ();
 
-    public void  buttonRemoveRedShirt( ) {
+        }
 
-        assert buttonRemoveRedShirt.isDisplayed ( );
-        text( "By click on this button we remove product  BIKE LIGHT from chart" );
-        buttonRemoveRedShirt.click ();
-    }
+        /**
+         * THIS Method  remove Fleece Jacket product
+         */
+
+        public void buttonRemoveFleeceJacket( ) {
+
+            assert buttonRemoveFleeceJacket.isDisplayed ( );
+
+            buttonRemoveBikeLight.click ();
+
+        }
+
+        /**
+         * THIS Method  remove Labs Oneesie product
+         */
+
+        public void  buttonRemoveLabsOnesie( ) {
+
+            assert buttonRemoveLabsOnesie.isDisplayed ( );
+
+            buttonRemoveLabsOnesie.click ();
+
+        }
+
+        /**
+         * THIS Method  remove Red T-Shirt product
+         */
+
+        public void  buttonRemoveRedShirt( ) {
+
+            assert buttonRemoveRedShirt.isDisplayed ( );
+
+            buttonRemoveRedShirt.click ();
+
+        }
 
 }

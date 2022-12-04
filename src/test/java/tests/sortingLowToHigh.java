@@ -1,15 +1,10 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.SortingPage;
 import pages.Strings;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class sortingLowToHigh extends BaseTest{
 
@@ -21,7 +16,7 @@ public class sortingLowToHigh extends BaseTest{
      * 3. Click on the LOGIN Button
      * 4. On inventory page select dropdown menu
      * 5. Click on the sorting by price low to high
-     *
+     * <p>
      *
      * Expected results
      * 6. User is successfully sort items and assert that
@@ -40,39 +35,37 @@ public class sortingLowToHigh extends BaseTest{
             //Login
 
             text("Login to SWAGLABS Sauce Demo");
+
             LoginPage loginPage = new LoginPage(driver);
+
             loginPage.logInUser(Strings.VALID_USERNAME, Strings.VALID_PASSWORD);
 
-            //Sorting of products by price low to high immediately
+            //Open drop down list
 
-            WebElement dropdownList = driver.findElement(By.xpath("//select"));
-            Select dropdown = new Select(dropdownList);
-            dropdown.selectByVisibleText("Price (low to high)");
+            text( "Sort elements by price from low to high");
 
-            List<WebElement> listOfItemsAfterSort = driver.findElements(By.xpath("//*[@class = 'inventory_item']"));
+            SortingPage sortingPage = new SortingPage( driver );
 
+            sortingPage.dropDown();
 
-            ArrayList<Double> priceArray = new ArrayList<Double>();
-            for (WebElement item : listOfItemsAfterSort) {
+            //Select sorting option from sorting list
 
-                String price = item.findElement(By.xpath(".//div[@class = 'inventory_item_price']")).getText().replace("$", "");
-                Double priceLikeDecimal = Double.valueOf(price);
+            text( "Select option to sort from low to high");
 
-                priceArray.add(priceLikeDecimal);
-            }
+            SortingPage sortingPage1 = new SortingPage( driver );
 
-            //Print of Price array
+            sortingPage1.selectSorting();
 
-            System.out.println("List of items  " + priceArray.toString());
+            //Checking results of sort
 
-            //Check out is it sorting successful
+            text( "Select option to sort from low to high");
 
-            for (int i = 0; i < priceArray.size() - 1; i++) {
+            SortingPage sortingPage2 = new SortingPage( driver );
 
-                assert priceArray.get(i) <= priceArray.get(i + 1) : "First: " + priceArray.get(i) + "it is not smaleer or equal to " + priceArray.get(i + 1);
+            sortingPage2.results();
 
 
-            }
+
         }
         finally {
 

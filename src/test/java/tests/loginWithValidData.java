@@ -1,4 +1,3 @@
-
 package tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,12 +13,12 @@ public class loginWithValidData  extends BaseTest {
      * 1. Navigate to a login page
      * 2. Filed out user-name and password field
      * 3. Click on the LOGIN Button
-     *
+     * <p>
      * Expected results
      * 4 User is successfully logged in and see inventory page
      */
 
-    @Test
+       @Test
 
     public void loginWithValidCreds( )  {
 
@@ -41,12 +40,12 @@ public class loginWithValidData  extends BaseTest {
         }
         finally {
 
-
-
-            driver.quit ( );
+            driver.quit();
 
         }
 
     }
 
 }
+
+

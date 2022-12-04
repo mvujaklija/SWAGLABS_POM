@@ -12,12 +12,15 @@ public class BaseTest {
 
                 ChromeOptions options = new ChromeOptions();
 
-                options.addArguments("--start-maximized");
-                options.addArguments("--ignore-certificate-errors");
-                options.addArguments("--disable-popup-blocking");
+                options.addArguments(new String[]{"--user-data-dir=C:/Users/Milan Vujaklija/AppData/Local/Google/Chrome/User Data"});
+                options.addArguments(new String[]{"--profile-directory=Profile 8"});
+                options.addArguments(new String[]{"--start-maximized"});
+                options.addArguments(new String[]{"--ignore-certificate-errors"});
+                options.addArguments(new String[]{"--disable-popup-blocking"});
                 //options.addArguments("--incognito");
                 options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-                return new ChromeDriver(options);
+                ChromeDriver driver = new ChromeDriver( options );
+                return driver;
             }
 
 

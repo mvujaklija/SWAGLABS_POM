@@ -6,7 +6,6 @@ import pages.LoginPage;
 import pages.Strings;
 
 
-
 public class loginWithInvalidData extends BaseTest {
 
     /**
@@ -15,12 +14,13 @@ public class loginWithInvalidData extends BaseTest {
      * 1. Navigate to a login page
      * 2. Filed out user-name and password field with wrong data
      * 3. Click on the LOGIN Button
-     *
+     * <p>
      * Expected results
      * 4 User is unsuccessfully logged and get error message
      */
 
     @Test
+
     public void loginWithInvalidCreds ( ) {
 
         //Invoking chrome driver
@@ -38,12 +38,14 @@ public class loginWithInvalidData extends BaseTest {
             assert currentURL.equals ( "https://www.saucedemo.com/inventory.html" ) : "User is on the wrong page.  https://www.saucedemo.com/inventory.html  " +
                     "  Actual: " + currentURL;
 
-        } finally {
-
-
+        }
+        finally {
 
             driver.quit ( );
 
         }
+
     }
+
 }
+
